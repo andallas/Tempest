@@ -1,12 +1,14 @@
 package tempest;
 
-public class Entity extends GameObject
+public abstract class Entity extends GameObject
 {
-    protected float MAX_SPEED = 5.0f;
+    protected float MAX_SPEED;
+    protected PhysicsComponent PHYSICS;
     
     @Override
     public void update()
     {
+        /*
         int radianOrientation = 100;
         
         // Find current direction vector
@@ -21,11 +23,6 @@ public class Entity extends GameObject
         
         // Update position with our new calculated values
         this.Position.add(this.velocity);
-    }
-    
-    @Override
-    public void render()
-    {
-        tempest.Draw.Rect(Position.getX(), Position.getY(), Scale.getX(), Scale.getY(), Rotation.getX());
+        */
     }
 }

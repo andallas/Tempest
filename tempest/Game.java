@@ -7,10 +7,12 @@ public class Game
 {
     private String TITLE;
     private ArrayList<GameObject> objects;
+    public Clock clock;
     
     public Game()
     {
         TITLE = "Game";
+        clock = new Clock();
         objects = new ArrayList<>();
         init();
     }
@@ -18,6 +20,7 @@ public class Game
     public Game(String title)
     {
         TITLE = title;
+        clock = new Clock();
         objects = new ArrayList<>();
         init();
     }
@@ -35,6 +38,7 @@ public class Game
     
     public void update()
     {
+        clock.update();
         for(GameObject go : objects)
             go.update();
     }

@@ -19,6 +19,6 @@ public class Ball extends Entity
     
     @Override public void render()
     {
-        super.render();
+        tempest.Draw.Rect(Position.getX(), Position.getY(), Scale.getX(), Scale.getY(), Rotation.getX());
     }
 }
