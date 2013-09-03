@@ -2,7 +2,6 @@ package tempest;
 
 public abstract class Entity extends GameObject
 {
-    protected float MAX_SPEED;
     protected PhysicsComponent PHYSICS;
     
     @Override

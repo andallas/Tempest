@@ -50,14 +50,8 @@ public class Game
     }
     
     // Getters
-    public String getTitle()
-    {
-        return TITLE;
-    }
+    public String getTitle() { return TITLE; }
     
     // Setters
-    public void setTitle(String value)
-    {
-        TITLE = value;
-    }
+    public void setTitle(String value) { TITLE = value; }
 }
