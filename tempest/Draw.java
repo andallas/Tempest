@@ -1,4 +1,4 @@
-package com.base.game.uncategorized;
+package tempest;
 
 import static org.lwjgl.opengl.GL11.*;
 

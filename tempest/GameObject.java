@@ -1,4 +1,4 @@
-package com.base.game.uncategorized;
+package tempest;
 
 public abstract class GameObject
 {
@@ -9,11 +9,7 @@ public abstract class GameObject
     
     // Utility
     abstract void update();
-    
-    public void render()
-    {
-        Draw.Rect(Position.getX(), Position.getY(), Scale.getX(), Scale.getY(), Rotation.getX());
-    }
+    abstract void render();
     
     // Getters
     public Vector3 position() { return Position; }

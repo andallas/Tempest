@@ -1,8 +1,9 @@
-package com.base.game.uncategorized;
+package tempest;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.lwjgl.LWJGLException;
+import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import static org.lwjgl.opengl.GL11.*;
@@ -15,14 +16,15 @@ public class Main
         GL_3D
     };
     
+    public static String TITLE = "Tempest v0.0.1";
     private static Game game;
     
     public static void main(String[] args)
     {
         // Initialization
-        initGame();
         initDisplay();
         initGL(GL_2D);
+        initGame();
         
         // Loop
         gameLoop();
@@ -33,7 +35,7 @@ public class Main
     
     private static void initGame()
     {
-        game = new Game("After Life");
+        game = new Game(TITLE);
     }
     
     private static void gameLoop()
@@ -90,23 +92,25 @@ public class Main
         }
     }
     
-    private static void cleanUp()
-    {
-        Display.destroy();
-    }
-    
     private static void initDisplay()
     {
         try
         {
             Display.setDisplayMode(new DisplayMode(640, 480));
-            Display.setTitle(game.getTitle());
+            Display.setTitle(TITLE);
             Display.create();
             Display.setVSyncEnabled(true);
+            Keyboard.create();
         }
         catch (LWJGLException ex)
         {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    private static void cleanUp()
+    {
+        Display.destroy();
+        Keyboard.destroy();
     }
 }
