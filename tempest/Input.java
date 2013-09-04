@@ -57,8 +57,22 @@ public class Input
         return false;
     }
     
+    public static int getKeyState(String key)
+    {
+        if(KEYS.containsKey(key))
+            return KEYS.get(key);
+        System.out.println("Not a valid Key");
+        return -1;
+    }
+    
     public void update()
     {
+        for (Map.Entry<String, Integer> entry : KEYS.entrySet())
+        {
+            if(entry.getValue() == 3)
+                KEYS.put(entry.getKey(), 0);
+        }
+        
         while(Keyboard.next())
         {
             // A
