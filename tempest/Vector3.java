@@ -227,4 +227,9 @@ public class Vector3
         float dot = this.dot(Vector3.Normalize(vec));
         return Math.acos(dot);
     }
+    
+    public String toString()
+    {
+        return "X: " + X + " Y: " + Y + " Z: " + Z;
+    }
 }

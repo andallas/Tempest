@@ -82,7 +82,7 @@ public class Main
                 glMatrixMode(GL_MODELVIEW);
                 
                 // Set the background color
-                glClearColor(0, 214, 255, 1);
+                glClearColor(0, 0.529f, 0.8f, 1);
                 
                 glDisable(GL_DEPTH_TEST);
             break;
