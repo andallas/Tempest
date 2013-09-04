@@ -13,7 +13,8 @@ public abstract class PhysicsComponent implements IPhysicsComponent
         this.Direction.setY(Math.cos(dirRadian));
         
         // Apply forward acceleration
-        this.Velocity.add(Vector3.Mult(this.Acceleration, this.Direction));
+        this.Velocity.add(Vector3.Mult(this.Direction, this.Acceleration.getX()));
+        //this.Velocity.add(Vector3.Mult(this.Acceleration, this.Direction));
         
         // Simulate friction
         this.Velocity.mult(0.99);

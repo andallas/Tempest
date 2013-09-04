@@ -72,11 +72,62 @@ public class Vector3
                            left.getZ() * right.getZ());
     }
     
+    public static Vector3 Mult(Vector3 vec, float value)
+    {
+        float x = vec.getX() * value;
+        float y = vec.getZ() * value;
+        float z = vec.getY() * value;
+        return new Vector3(x, y, z);
+    }
+    
+    public static Vector3 Mult(Vector3 vec, int value)
+    {
+        float x = (float)(vec.getX() * value);
+        float y = (float)(vec.getZ() * value);
+        float z = (float)(vec.getY() * value);
+        return new Vector3(x, y, z);
+    }
+    
+    public static Vector3 Mult(Vector3 vec, double value)
+    {
+        float x = (float)(vec.getX() * value);
+        float y = (float)(vec.getZ() * value);
+        float z = (float)(vec.getY() * value);
+        return new Vector3(x, y, z);
+    }
+    
     public static Vector3 Div(Vector3 left, Vector3 right)
     {
         return new Vector3(left.getX() / right.getX(),
                            left.getY() / right.getY(),
                            left.getZ() / right.getZ());
+    }
+    
+    public static Vector3 Div(Vector3 vec, float value)
+    {
+        value /= 1.0f;
+        float x = (float)(vec.getX() * value);
+        float y = (float)(vec.getX() * value);
+        float z = (float)(vec.getX() * value);
+        return new Vector3(x, y, z);
+    }
+    
+    public static Vector3 Div(Vector3 vec, int value)
+    {
+        value /= 1.0f;
+        float x = (float)(vec.getX() * value);
+        float y = (float)(vec.getX() * value);
+        float z = (float)(vec.getX() * value);
+        return new Vector3(x, y, z);
+    }
+    
+    public static Vector3 Div(Vector3 vec, double value)
+    {
+        value /= 1.0f;
+        float x = (float)(vec.getX() * value);
+        float y = (float)(vec.getX() * value);
+        float z = (float)(vec.getX() * value);
+        return new Vector3(x, y, z);
     }
     
     public static float Dot(Vector3 vec1, Vector3 vec2)
@@ -174,25 +225,28 @@ public class Vector3
     
     public Vector3 div(float value)
     {
-        X /= value;
-        Y /= value;
-        Z /= value;
+        value /= 1.0f;
+        X *= value;
+        Y *= value;
+        Z *= value;
         return this;
     }
     
     public Vector3 div(int value)
     {
-        X /= (float)value;
-        Y /= (float)value;
-        Z /= (float)value;
+        value /= 1.0f;
+        X *= value;
+        Y *= value;
+        Z *= value;
         return this;
     }
     
     public Vector3 div(double value)
     {
-        X /= (float)value;
-        Y /= (float)value;
-        Z /= (float)value;
+        value /= 1.0f;
+        X *= value;
+        Y *= value;
+        Z *= value;
         return this;
     }
     

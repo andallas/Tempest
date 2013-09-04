@@ -31,11 +31,8 @@ public class Ball extends Entity
     
     @Override public void update()
     {
-        int radianOrientation = 100;
-        
+        int radianOrientation = 1;
         PHYSICS.move(radianOrientation);
-        
-        // Update position with our new calculated values
         this.Position.add(PHYSICS.Velocity);
     }
     
