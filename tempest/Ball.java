@@ -31,9 +31,16 @@ public class Ball extends Entity
     
     @Override public void update()
     {
-        int radianOrientation = 1;
+        if(Input.getKeyDown("A"))
+            System.out.println("A Down");
+        if(Input.getKeyUp("A"))
+            System.out.println("A Release");
+        if(Input.getKeyHeld("A"))
+            System.out.println("A Held");
+
+        float radianOrientation = 0.5f;
         PHYSICS.move(radianOrientation);
-        this.Position.add(PHYSICS.Velocity);
+        this.Position.add(Vector3.Mult(PHYSICS.Velocity, Clock.DeltaTime()));
     }
     
     @Override public void render()

@@ -11,7 +11,7 @@ public class AABB extends PhysicsComponent
         Position = new Vector3();
         Scale = new Vector3();
         Velocity = new Vector3();
-        Acceleration = new Vector3(0.1f, 0.1f, 0.0f);
+        Acceleration = new Vector3(1.0f, 1.0f, 0.0f);
         Direction = new Vector3();
         LastCollisionTime = 0.0f;
     }

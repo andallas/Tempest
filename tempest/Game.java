@@ -7,12 +7,14 @@ public class Game
 {
     private String TITLE;
     private ArrayList<GameObject> objects;
-    public Clock clock;
+    private Clock clock;
+    private Input input;
     
     public Game()
     {
         TITLE = "Game";
         clock = new Clock();
+        input = new Input();
         objects = new ArrayList<>();
         init();
     }
@@ -21,6 +23,7 @@ public class Game
     {
         TITLE = title;
         clock = new Clock();
+        input = new Input();
         objects = new ArrayList<>();
         init();
     }
@@ -33,7 +36,7 @@ public class Game
     
     public void getInput()
     {
-        
+        input.update();
     }
     
     public void update()

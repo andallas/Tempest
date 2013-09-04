@@ -75,24 +75,24 @@ public class Vector3
     public static Vector3 Mult(Vector3 vec, float value)
     {
         float x = vec.getX() * value;
-        float y = vec.getZ() * value;
-        float z = vec.getY() * value;
+        float y = vec.getY() * value;
+        float z = vec.getZ() * value;
         return new Vector3(x, y, z);
     }
     
     public static Vector3 Mult(Vector3 vec, int value)
     {
         float x = (float)(vec.getX() * value);
-        float y = (float)(vec.getZ() * value);
-        float z = (float)(vec.getY() * value);
+        float y = (float)(vec.getY() * value);
+        float z = (float)(vec.getZ() * value);
         return new Vector3(x, y, z);
     }
     
     public static Vector3 Mult(Vector3 vec, double value)
     {
         float x = (float)(vec.getX() * value);
-        float y = (float)(vec.getZ() * value);
-        float z = (float)(vec.getY() * value);
+        float y = (float)(vec.getY() * value);
+        float z = (float)(vec.getZ() * value);
         return new Vector3(x, y, z);
     }
     
@@ -107,8 +107,8 @@ public class Vector3
     {
         value /= 1.0f;
         float x = (float)(vec.getX() * value);
-        float y = (float)(vec.getX() * value);
-        float z = (float)(vec.getX() * value);
+        float y = (float)(vec.getY() * value);
+        float z = (float)(vec.getZ() * value);
         return new Vector3(x, y, z);
     }
     
@@ -116,8 +116,8 @@ public class Vector3
     {
         value /= 1.0f;
         float x = (float)(vec.getX() * value);
-        float y = (float)(vec.getX() * value);
-        float z = (float)(vec.getX() * value);
+        float y = (float)(vec.getY() * value);
+        float z = (float)(vec.getZ() * value);
         return new Vector3(x, y, z);
     }
     
@@ -125,8 +125,8 @@ public class Vector3
     {
         value /= 1.0f;
         float x = (float)(vec.getX() * value);
-        float y = (float)(vec.getX() * value);
-        float z = (float)(vec.getX() * value);
+        float y = (float)(vec.getY() * value);
+        float z = (float)(vec.getZ() * value);
         return new Vector3(x, y, z);
     }
     
