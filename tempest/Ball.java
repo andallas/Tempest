@@ -2,38 +2,25 @@ package tempest;
 
 import org.lwjgl.opengl.Display;
 
-public class Ball extends Entity
+public class Ball extends GameObject
 {   
     public Ball()
     {
         this.Position = new Vector3(Display.getWidth() / 2, Display.getHeight() / 2, 0.0f);
         this.Scale = new Vector3(32, 32, 0);
         this.Rotation = new Vector3();
-        this.PHYSICS = new AABB();
     }
-    
-    public Ball(Vector3 position)
-    {
-        this.Position = position;
-        this.Scale = new Vector3(32, 32, 0);
-        this.Rotation = new Vector3();
-        this.PHYSICS = new AABB();
-    }
-    
-    public Ball(Vector3 position, Vector3 scale)
+
+    public Ball(Vector3 position, Vector3 scale, Vector3 rot)
     {
         this.Position = position;
         this.Scale = scale;
-        this.Rotation = new Vector3();
-        this.PHYSICS = new AABB();
+        this.Rotation = rot;
     }
-    
     
     @Override public void update()
     {
-        float radianOrientation = 0.5f;
-        PHYSICS.move(radianOrientation);
-        this.Position.add(Vector3.Mult(PHYSICS.Velocity, Clock.DeltaTime()));
+        
     }
     
     @Override public void render()
