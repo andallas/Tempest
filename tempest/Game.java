@@ -1,6 +1,7 @@
 package tempest;
 
 import java.util.ArrayList;
+
 import org.lwjgl.opengl.Display;
 
 public class Game
@@ -30,7 +31,7 @@ public class Game
     
     public final void init()
     {
-        Ball ball = new Ball(new Vector3(Display.getWidth() / 2, Display.getHeight() / 2, 0.0f), new Vector3(32, 32, 0), new Vector3(0, 0, 0));
+        Player ball = new Player(new Vector3(Display.getWidth() / 2, Display.getHeight() / 2, 0.0f), new Vector3(32, 32, 0), new Vector3(0, 0, 0));
         objects.add(ball);
     }
     

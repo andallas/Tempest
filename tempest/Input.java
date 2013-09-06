@@ -33,7 +33,7 @@ public class Input
         KEYS.put("TAB", 0);         KEYS.put("ESC", 0);
     }
     
-    public static boolean getKeyDown(String key)
+    public static boolean getKeyPressed(String key)
     {
         if(KEYS.containsKey(key))
             return KEYS.get(key) == 1 ? true : false;
@@ -55,6 +55,11 @@ public class Input
             return KEYS.get(key) == 3 ? true : false;
         System.out.println("Not a valid Key");
         return false;
+    }
+    
+    public static boolean getKeyDown(String key)
+    {
+        return Input.getKeyPressed(key) || Input.getKeyHeld(key);
     }
     
     public static int getKeyState(String key)
