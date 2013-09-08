@@ -30,132 +30,132 @@ public class Vector3
     
     public Vector3(Vector3 vec)
     {
-        X = vec.getX();
-        Y = vec.getY();
-        Z = vec.getZ();
+        X = vec.X();
+        Y = vec.Y();
+        Z = vec.Z();
     }
     
     // Getters
-    public float getX() { return X; }
-    public float getY() { return Y; }
-    public float getZ() { return Z; }
+    public float X() { return X; }
+    public float Y() { return Y; }
+    public float Z() { return Z; }
     // Setters
-    public void setX(float value)   { X = value; }
-    public void setX(int value)     { X = (float)value; }
-    public void setX(double value)  { X = (float)value; }
-    public void setY(float value)   { Y = value; }
-    public void setY(int value)     { Y = (float)value; }
-    public void setY(double value)  { Y = (float)value; }
-    public void setZ(float value)   { Z = value; }
-    public void setZ(int value)     { Z = (float)value; }
-    public void setZ(double value)  { Z = (float)value; }
+    public void X(float value)   { X = value; }
+    public void X(int value)     { X = (float)value; }
+    public void X(double value)  { X = (float)value; }
+    public void Y(float value)   { Y = value; }
+    public void Y(int value)     { Y = (float)value; }
+    public void Y(double value)  { Y = (float)value; }
+    public void Z(float value)   { Z = value; }
+    public void Z(int value)     { Z = (float)value; }
+    public void Z(double value)  { Z = (float)value; }
     
     // Static
     public static Vector3 Add(Vector3 left, Vector3 right)
     {
-        return new Vector3(left.getX() + right.getX(),
-                           left.getY() + right.getY(),
-                           left.getZ() + right.getZ());
+        return new Vector3(left.X() + right.X(),
+                           left.Y() + right.Y(),
+                           left.Z() + right.Z());
     }
     
     public static Vector3 Sub(Vector3 left, Vector3 right)
     {
-        return new Vector3(left.getX() - right.getX(),
-                           left.getY() - right.getY(),
-                           left.getZ() - right.getZ());
+        return new Vector3(left.X() - right.X(),
+                           left.Y() - right.Y(),
+                           left.Z() - right.Z());
     }
     
     public static Vector3 Mult(Vector3 left, Vector3 right)
     {
-        return new Vector3(left.getX() * right.getX(),
-                           left.getY() * right.getY(),
-                           left.getZ() * right.getZ());
+        return new Vector3(left.X() * right.X(),
+                           left.Y() * right.Y(),
+                           left.Z() * right.Z());
     }
     
     public static Vector3 Mult(Vector3 vec, float value)
     {
-        float x = vec.getX() * value;
-        float y = vec.getY() * value;
-        float z = vec.getZ() * value;
+        float x = vec.X() * value;
+        float y = vec.Y() * value;
+        float z = vec.Z() * value;
         return new Vector3(x, y, z);
     }
     
     public static Vector3 Mult(Vector3 vec, int value)
     {
-        float x = (float)(vec.getX() * value);
-        float y = (float)(vec.getY() * value);
-        float z = (float)(vec.getZ() * value);
+        float x = (float)(vec.X() * value);
+        float y = (float)(vec.Y() * value);
+        float z = (float)(vec.Z() * value);
         return new Vector3(x, y, z);
     }
     
     public static Vector3 Mult(Vector3 vec, double value)
     {
-        float x = (float)(vec.getX() * value);
-        float y = (float)(vec.getY() * value);
-        float z = (float)(vec.getZ() * value);
+        float x = (float)(vec.X() * value);
+        float y = (float)(vec.Y() * value);
+        float z = (float)(vec.Z() * value);
         return new Vector3(x, y, z);
     }
     
     public static Vector3 Div(Vector3 left, Vector3 right)
     {
-        return new Vector3(left.getX() / right.getX(),
-                           left.getY() / right.getY(),
-                           left.getZ() / right.getZ());
+        return new Vector3(left.X() / right.X(),
+                           left.Y() / right.Y(),
+                           left.Z() / right.Z());
     }
     
     public static Vector3 Div(Vector3 vec, float value)
     {
         float inverseValue = 1.0f / value;
-        float x = (float)(vec.getX() * inverseValue);
-        float y = (float)(vec.getY() * inverseValue);
-        float z = (float)(vec.getZ() * inverseValue);
+        float x = (float)(vec.X() * inverseValue);
+        float y = (float)(vec.Y() * inverseValue);
+        float z = (float)(vec.Z() * inverseValue);
         return new Vector3(x, y, z);
     }
     
     public static Vector3 Div(Vector3 vec, int value)
     {
         float inverseValue = (float)(1.0f / value);
-        float x = (float)(vec.getX() * inverseValue);
-        float y = (float)(vec.getY() * inverseValue);
-        float z = (float)(vec.getZ() * inverseValue);
+        float x = (float)(vec.X() * inverseValue);
+        float y = (float)(vec.Y() * inverseValue);
+        float z = (float)(vec.Z() * inverseValue);
         return new Vector3(x, y, z);
     }
     
     public static Vector3 Div(Vector3 vec, double value)
     {
         float inverseValue = (float)(1.0f / value);
-        float x = (float)(vec.getX() * inverseValue);
-        float y = (float)(vec.getY() * inverseValue);
-        float z = (float)(vec.getZ() * inverseValue);
+        float x = (float)(vec.X() * inverseValue);
+        float y = (float)(vec.Y() * inverseValue);
+        float z = (float)(vec.Z() * inverseValue);
         return new Vector3(x, y, z);
     }
     
     public static float Dot(Vector3 vec1, Vector3 vec2)
     {
-        return (vec1.getX() * vec2.getX()) +
-               (vec1.getY() * vec2.getY()) +
-               (vec1.getZ() * vec2.getZ());
+        return (vec1.X() * vec2.X()) +
+               (vec1.Y() * vec2.Y()) +
+               (vec1.Z() * vec2.Z());
     }
     
     public static Vector3 Cross(Vector3 vec1, Vector3 vec2)
     {
-        return new Vector3((vec1.getY() * vec2.getZ()) - (vec1.getZ() * vec2.getY()),
-                           (vec1.getZ() * vec2.getX()) - (vec1.getX() * vec2.getZ()),
-                           (vec1.getX() * vec2.getY()) - (vec1.getY() * vec2.getX()));
+        return new Vector3((vec1.Y() * vec2.Z()) - (vec1.Z() * vec2.Y()),
+                           (vec1.Z() * vec2.X()) - (vec1.X() * vec2.Z()),
+                           (vec1.X() * vec2.Y()) - (vec1.Y() * vec2.X()));
     }
     
     public static double Magnitude(Vector3 vec)
     {
-        return Math.sqrt((vec.getX() * vec.getX()) + (vec.getY() * vec.getY()) + (vec.getZ() * vec.getZ()));
+        return Math.sqrt((vec.X() * vec.X()) + (vec.Y() * vec.Y()) + (vec.Z() * vec.Z()));
     }
     
     public static Vector3 Normalize(Vector3 vec)
     {
         // Multiply by the inverse length to save on divides
         double inverseLength = 1.0 / Vector3.Magnitude(vec);
-        vec.setX(vec.getX() * inverseLength);
-        vec.setY(vec.getY() * inverseLength);
-        vec.setZ(vec.getZ() * inverseLength);
+        vec.X(vec.X() * inverseLength);
+        vec.Y(vec.Y() * inverseLength);
+        vec.Z(vec.Z() * inverseLength);
         
         return vec;
     }
@@ -169,25 +169,25 @@ public class Vector3
     // Utility
     public Vector3 add(Vector3 vec)
     {
-        X += vec.getX();
-        Y += vec.getY();
-        Z += vec.getZ();
+        X += vec.X();
+        Y += vec.Y();
+        Z += vec.Z();
         return this;
     }
     
     public Vector3 sub(Vector3 vec)
     {
-        X -= vec.getX();
-        Y -= vec.getY();
-        Z -= vec.getZ();
+        X -= vec.X();
+        Y -= vec.Y();
+        Z -= vec.Z();
         return this;
     }
     
     public Vector3 mult(Vector3 vec)
     {
-        X *= vec.getX();
-        Y *= vec.getY();
-        Z *= vec.getZ();
+        X *= vec.X();
+        Y *= vec.Y();
+        Z *= vec.Z();
         return this;
     }
     
@@ -217,9 +217,9 @@ public class Vector3
     
     public Vector3 div(Vector3 vec)
     {
-        X /= vec.getX();
-        Y /= vec.getY();
-        Z /= vec.getZ();
+        X /= vec.X();
+        Y /= vec.Y();
+        Z /= vec.Z();
         return this;
     }
     
@@ -252,14 +252,14 @@ public class Vector3
     
     public float dot(Vector3 vec)
     {
-        return (X * vec.getX()) + (Y * vec.getY()) + (Z * vec.getZ());
+        return (X * vec.X()) + (Y * vec.Y()) + (Z * vec.Z());
     }
     
     public Vector3 cross(Vector3 vec)
     {
-        return new Vector3((Y * vec.getZ()) - (Z * vec.getY()),
-                           (Z * vec.getX()) - (X * vec.getZ()),
-                           (X * vec.getY()) - (Y * vec.getX()));
+        return new Vector3((Y * vec.Z()) - (Z * vec.Y()),
+                           (Z * vec.X()) - (X * vec.Z()),
+                           (X * vec.Y()) - (Y * vec.X()));
     }
     
     public double magnitude()

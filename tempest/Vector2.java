@@ -26,113 +26,113 @@ public class Vector2
     
     public Vector2(Vector2 vec)
     {
-        X = vec.getX();
-        Y = vec.getY();
+        X = vec.X();
+        Y = vec.Y();
     }
     
     // Getters
-    public float getX() { return X; }
-    public float getY() { return Y; }
+    public float X() { return X; }
+    public float Y() { return Y; }
     // Setters
-    public void setX(float value)   { X = value; }
-    public void setX(int value)     { X = (float)value; }
-    public void setX(double value)  { X = (float)value; }
-    public void setY(float value)   { Y = value; }
-    public void setY(int value)     { Y = (float)value; }
-    public void setY(double value)  { Y = (float)value; }
+    public void X(float value)   { X = value; }
+    public void X(int value)     { X = (float)value; }
+    public void X(double value)  { X = (float)value; }
+    public void Y(float value)   { Y = value; }
+    public void Y(int value)     { Y = (float)value; }
+    public void Y(double value)  { Y = (float)value; }
     
     // Static
     public static Vector2 Add(Vector2 left, Vector2 right)
     {
-        return new Vector2(left.getX() + right.getX(),
-                           left.getY() + right.getY());
+        return new Vector2(left.X() + right.X(),
+                           left.Y() + right.Y());
     }
     
     public static Vector2 Sub(Vector2 left, Vector2 right)
     {
-        return new Vector2(left.getX() - right.getX(),
-                           left.getY() - right.getY());
+        return new Vector2(left.X() - right.X(),
+                           left.Y() - right.Y());
     }
     
     public static Vector2 Mult(Vector2 left, Vector2 right)
     {
-        return new Vector2(left.getX() * right.getX(),
-                           left.getY() * right.getY());
+        return new Vector2(left.X() * right.X(),
+                           left.Y() * right.Y());
     }
     
     public static Vector2 Mult(Vector2 vec, float value)
     {
-        float x = vec.getX() * value;
-        float y = vec.getY() * value;
+        float x = vec.X() * value;
+        float y = vec.Y() * value;
         return new Vector2(x, y);
     }
     
     public static Vector2 Mult(Vector2 vec, int value)
     {
-        float x = (float)(vec.getX() * value);
-        float y = (float)(vec.getY() * value);
+        float x = (float)(vec.X() * value);
+        float y = (float)(vec.Y() * value);
         return new Vector2(x, y);
     }
     
     public static Vector2 Mult(Vector2 vec, double value)
     {
-        float x = (float)(vec.getX() * value);
-        float y = (float)(vec.getY() * value);
+        float x = (float)(vec.X() * value);
+        float y = (float)(vec.Y() * value);
         return new Vector2(x, y);
     }
     
     public static Vector2 Div(Vector2 left, Vector2 right)
     {
-        return new Vector2(left.getX() / right.getX(),
-                           left.getY() / right.getY());
+        return new Vector2(left.X() / right.X(),
+                           left.Y() / right.Y());
     }
     
     public static Vector2 Div(Vector2 vec, float value)
     {
         float inverseValue = 1.0f / value;
-        float x = (float)(vec.getX() * inverseValue);
-        float y = (float)(vec.getY() * inverseValue);
+        float x = (float)(vec.X() * inverseValue);
+        float y = (float)(vec.Y() * inverseValue);
         return new Vector2(x, y);
     }
     
     public static Vector2 Div(Vector2 vec, int value)
     {
         float inverseValue = (float)(1.0f / value);
-        float x = (float)(vec.getX() * inverseValue);
-        float y = (float)(vec.getY() * inverseValue);
+        float x = (float)(vec.X() * inverseValue);
+        float y = (float)(vec.Y() * inverseValue);
         return new Vector2(x, y);
     }
     
     public static Vector2 Div(Vector2 vec, double value)
     {
         float inverseValue = (float)(1.0f / value);
-        float x = (float)(vec.getX() * inverseValue);
-        float y = (float)(vec.getY() * inverseValue);
+        float x = (float)(vec.X() * inverseValue);
+        float y = (float)(vec.Y() * inverseValue);
         return new Vector2(x, y);
     }
     
     public static float Dot(Vector2 vec1, Vector2 vec2)
     {
-        return (vec1.getX() * vec2.getX()) +
-               (vec1.getY() * vec2.getY());
+        return (vec1.X() * vec2.X()) +
+               (vec1.Y() * vec2.Y());
     }
     
     public static float Cross(Vector2 vec1, Vector2 vec2)
     {
-        return (vec1.getX() * vec2.getY()) - (vec1.getY() * vec2.getX());
+        return (vec1.X() * vec2.Y()) - (vec1.Y() * vec2.X());
     }
     
     public static double Magnitude(Vector2 vec)
     {
-        return Math.sqrt((vec.getX() * vec.getX()) + (vec.getY() * vec.getY()));
+        return Math.sqrt((vec.X() * vec.X()) + (vec.Y() * vec.Y()));
     }
     
     public static Vector2 Normalize(Vector2 vec)
     {
         // Multiply by the inverse length to save on divides
         double inverseLength = 1.0 / Vector2.Magnitude(vec);
-        vec.setX(vec.getX() * inverseLength);
-        vec.setY(vec.getY() * inverseLength);
+        vec.X(vec.X() * inverseLength);
+        vec.Y(vec.Y() * inverseLength);
         
         return vec;
     }
@@ -146,22 +146,22 @@ public class Vector2
     // Utility
     public Vector2 add(Vector2 vec)
     {
-        X += vec.getX();
-        Y += vec.getY();
+        X += vec.X();
+        Y += vec.Y();
         return this;
     }
     
     public Vector2 sub(Vector2 vec)
     {
-        X -= vec.getX();
-        Y -= vec.getY();
+        X -= vec.X();
+        Y -= vec.Y();
         return this;
     }
     
     public Vector2 mult(Vector2 vec)
     {
-        X *= vec.getX();
-        Y *= vec.getY();
+        X *= vec.X();
+        Y *= vec.Y();
         return this;
     }
     
@@ -188,8 +188,8 @@ public class Vector2
     
     public Vector2 div(Vector2 vec)
     {
-        X /= vec.getX();
-        Y /= vec.getY();
+        X /= vec.X();
+        Y /= vec.Y();
         return this;
     }
     
@@ -219,12 +219,12 @@ public class Vector2
     
     public float dot(Vector2 vec)
     {
-        return (X * vec.getX()) + (Y * vec.getY());
+        return (X * vec.X()) + (Y * vec.Y());
     }
     
     public float cross(Vector2 vec)
     {
-        return (X * vec.getY()) - (Y * vec.getX());
+        return (X * vec.Y()) - (Y * vec.X());
     }
     
     public double magnitude()

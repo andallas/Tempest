@@ -6,9 +6,19 @@ import org.lwjgl.input.Keyboard;
 
 public class Input
 {
+    private static Input input = new Input();
+    
     private static Map<String, Integer> KEYS;
     
-    public Input()
+    private Input()
+    {}
+    
+    public static Input Instance()
+    {
+        return input;
+    }
+    
+    public void start()
     {
         KEYS = new HashMap<>();
         Keyboard.enableRepeatEvents(true);

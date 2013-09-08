@@ -34,142 +34,142 @@ public class Vector4
     
     public Vector4(Vector4 vec)
     {
-        X = vec.getX();
-        Y = vec.getY();
-        Z = vec.getZ();
-        W = vec.getW();
+        X = vec.X();
+        Y = vec.Y();
+        Z = vec.Z();
+        W = vec.W();
     }
     
     // Getters
-    public float getX() { return X; }
-    public float getY() { return Y; }
-    public float getZ() { return Z; }
-    public float getW() { return W; }
+    public float X() { return X; }
+    public float Y() { return Y; }
+    public float Z() { return Z; }
+    public float W() { return W; }
     // Setters
-    public void setX(float value)   { X = value; }
-    public void setX(int value)     { X = (float)value; }
-    public void setX(double value)  { X = (float)value; }
-    public void setY(float value)   { Y = value; }
-    public void setY(int value)     { Y = (float)value; }
-    public void setY(double value)  { Y = (float)value; }
-    public void setZ(float value)   { Z = value; }
-    public void setZ(int value)     { Z = (float)value; }
-    public void setZ(double value)  { Z = (float)value; }
-    public void setW(float value)   { W = value; }
-    public void setW(int value)     { W = (float)value; }
-    public void setW(double value)  { W = (float)value; }
+    public void X(float value)   { X = value; }
+    public void X(int value)     { X = (float)value; }
+    public void X(double value)  { X = (float)value; }
+    public void Y(float value)   { Y = value; }
+    public void Y(int value)     { Y = (float)value; }
+    public void Y(double value)  { Y = (float)value; }
+    public void Z(float value)   { Z = value; }
+    public void Z(int value)     { Z = (float)value; }
+    public void Z(double value)  { Z = (float)value; }
+    public void W(float value)   { W = value; }
+    public void W(int value)     { W = (float)value; }
+    public void W(double value)  { W = (float)value; }
     
     // Static
     public static Vector4 Add(Vector4 left, Vector4 right)
     {
-        return new Vector4(left.getX() + right.getX(),
-                           left.getY() + right.getY(),
-                           left.getZ() + right.getZ(),
-                           left.getW() + right.getW());
+        return new Vector4(left.X() + right.X(),
+                           left.Y() + right.Y(),
+                           left.Z() + right.Z(),
+                           left.W() + right.W());
     }
     
     public static Vector4 Sub(Vector4 left, Vector4 right)
     {
-        return new Vector4(left.getX() - right.getX(),
-                           left.getY() - right.getY(),
-                           left.getZ() - right.getZ(),
-                           left.getW() - right.getW());
+        return new Vector4(left.X() - right.X(),
+                           left.Y() - right.Y(),
+                           left.Z() - right.Z(),
+                           left.W() - right.W());
     }
     
     public static Vector4 Mult(Vector4 left, Vector4 right)
     {
-        return new Vector4(left.getX() * right.getX(),
-                           left.getY() * right.getY(),
-                           left.getZ() * right.getZ(),
-                           left.getW() * right.getW());
+        return new Vector4(left.X() * right.X(),
+                           left.Y() * right.Y(),
+                           left.Z() * right.Z(),
+                           left.W() * right.W());
     }
     
     public static Vector4 Mult(Vector4 vec, float value)
     {
-        float x = vec.getX() * value;
-        float y = vec.getY() * value;
-        float z = vec.getZ() * value;
-        float w = vec.getW() * value;
+        float x = vec.X() * value;
+        float y = vec.Y() * value;
+        float z = vec.Z() * value;
+        float w = vec.W() * value;
         return new Vector4(x, y, z, w);
     }
     
     public static Vector4 Mult(Vector4 vec, int value)
     {
-        float x = (float)(vec.getX() * value);
-        float y = (float)(vec.getY() * value);
-        float z = (float)(vec.getZ() * value);
-        float w = (float)(vec.getW() * value);
+        float x = (float)(vec.X() * value);
+        float y = (float)(vec.Y() * value);
+        float z = (float)(vec.Z() * value);
+        float w = (float)(vec.W() * value);
         return new Vector4(x, y, z, w);
     }
     
     public static Vector4 Mult(Vector4 vec, double value)
     {
-        float x = (float)(vec.getX() * value);
-        float y = (float)(vec.getY() * value);
-        float z = (float)(vec.getZ() * value);
-        float w = (float)(vec.getW() * value);
+        float x = (float)(vec.X() * value);
+        float y = (float)(vec.Y() * value);
+        float z = (float)(vec.Z() * value);
+        float w = (float)(vec.W() * value);
         return new Vector4(x, y, z, w);
     }
     
     public static Vector4 Div(Vector4 left, Vector4 right)
     {
-        return new Vector4(left.getX() / right.getX(),
-                           left.getY() / right.getY(),
-                           left.getZ() / right.getZ(),
-                           left.getW() / right.getW());
+        return new Vector4(left.X() / right.X(),
+                           left.Y() / right.Y(),
+                           left.Z() / right.Z(),
+                           left.W() / right.W());
     }
     
     public static Vector4 Div(Vector4 vec, float value)
     {
         float inverseValue = 1.0f / value;
-        float x = (float)(vec.getX() * inverseValue);
-        float y = (float)(vec.getY() * inverseValue);
-        float z = (float)(vec.getZ() * inverseValue);
-        float w = (float)(vec.getW() * inverseValue);
+        float x = (float)(vec.X() * inverseValue);
+        float y = (float)(vec.Y() * inverseValue);
+        float z = (float)(vec.Z() * inverseValue);
+        float w = (float)(vec.W() * inverseValue);
         return new Vector4(x, y, z, w);
     }
     
     public static Vector4 Div(Vector4 vec, int value)
     {
         float inverseValue = (float)(1.0f / value);
-        float x = (float)(vec.getX() * inverseValue);
-        float y = (float)(vec.getY() * inverseValue);
-        float z = (float)(vec.getZ() * inverseValue);
-        float w = (float)(vec.getW() * inverseValue);
+        float x = (float)(vec.X() * inverseValue);
+        float y = (float)(vec.Y() * inverseValue);
+        float z = (float)(vec.Z() * inverseValue);
+        float w = (float)(vec.W() * inverseValue);
         return new Vector4(x, y, z, w);
     }
     
     public static Vector4 Div(Vector4 vec, double value)
     {
         float inverseValue = (float)(1.0f / value);
-        float x = (float)(vec.getX() * inverseValue);
-        float y = (float)(vec.getY() * inverseValue);
-        float z = (float)(vec.getZ() * inverseValue);
-        float w = (float)(vec.getW() * inverseValue);
+        float x = (float)(vec.X() * inverseValue);
+        float y = (float)(vec.Y() * inverseValue);
+        float z = (float)(vec.Z() * inverseValue);
+        float w = (float)(vec.W() * inverseValue);
         return new Vector4(x, y, z, w);
     }
     
     public static float Dot(Vector4 vec1, Vector4 vec2)
     {
-        return (vec1.getX() * vec2.getX()) +
-               (vec1.getY() * vec2.getY()) +
-               (vec1.getZ() * vec2.getZ()) +
-               (vec1.getW() * vec2.getW());
+        return (vec1.X() * vec2.X()) +
+               (vec1.Y() * vec2.Y()) +
+               (vec1.Z() * vec2.Z()) +
+               (vec1.W() * vec2.W());
     }
     
     public static double Magnitude(Vector4 vec)
     {
-        return Math.sqrt((vec.getX() * vec.getX()) + (vec.getY() * vec.getY()) + (vec.getZ() * vec.getZ()) + (vec.getW() * vec.getW()));
+        return Math.sqrt((vec.X() * vec.X()) + (vec.Y() * vec.Y()) + (vec.Z() * vec.Z()) + (vec.W() * vec.W()));
     }
     
     public static Vector4 Normalize(Vector4 vec)
     {
         // Multiply by the inverse length to save on divides
         double inverseLength = 1.0 / Vector4.Magnitude(vec);
-        vec.setX(vec.getX() * inverseLength);
-        vec.setY(vec.getY() * inverseLength);
-        vec.setZ(vec.getZ() * inverseLength);
-        vec.setW(vec.getW() * inverseLength);
+        vec.X(vec.X() * inverseLength);
+        vec.Y(vec.Y() * inverseLength);
+        vec.Z(vec.Z() * inverseLength);
+        vec.W(vec.W() * inverseLength);
         
         return vec;
     }
@@ -183,28 +183,28 @@ public class Vector4
     // Utility
     public Vector4 add(Vector4 vec)
     {
-        X += vec.getX();
-        Y += vec.getY();
-        Z += vec.getZ();
-        W += vec.getW();
+        X += vec.X();
+        Y += vec.Y();
+        Z += vec.Z();
+        W += vec.W();
         return this;
     }
     
     public Vector4 sub(Vector4 vec)
     {
-        X -= vec.getX();
-        Y -= vec.getY();
-        Z -= vec.getZ();
-        W -= vec.getW();
+        X -= vec.X();
+        Y -= vec.Y();
+        Z -= vec.Z();
+        W -= vec.W();
         return this;
     }
     
     public Vector4 mult(Vector4 vec)
     {
-        X *= vec.getX();
-        Y *= vec.getY();
-        Z *= vec.getZ();
-        W *= vec.getW();
+        X *= vec.X();
+        Y *= vec.Y();
+        Z *= vec.Z();
+        W *= vec.W();
         return this;
     }
     
@@ -237,10 +237,10 @@ public class Vector4
     
     public Vector4 div(Vector4 vec)
     {
-        X /= vec.getX();
-        Y /= vec.getY();
-        Z /= vec.getZ();
-        W /= vec.getW();
+        X /= vec.X();
+        Y /= vec.Y();
+        Z /= vec.Z();
+        W /= vec.W();
         return this;
     }
     
@@ -276,7 +276,7 @@ public class Vector4
     
     public float dot(Vector4 vec)
     {
-        return (X * vec.getX()) + (Y * vec.getY()) + (Z * vec.getZ()) + (W * vec.getW());
+        return (X * vec.X()) + (Y * vec.Y()) + (Z * vec.Z()) + (W * vec.W());
     }
     
     public double magnitude()

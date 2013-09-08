@@ -6,45 +6,47 @@ import org.lwjgl.opengl.Display;
 
 public class Game
 {
-    private String TITLE;
-    private ArrayList<GameObject> objects;
-    private Clock clock;
-    private Input input;
+    private static Game game = new Game();
     
-    public Game()
+    private String TITLE;
+    public  ArrayList<GameObject> objects;
+    
+    private Game()
+    {}
+    
+    public static Game Instance()
     {
-        TITLE = "Game";
-        clock = new Clock();
-        input = new Input();
-        objects = new ArrayList<>();
-        init();
+        return game;
     }
     
-    public Game(String title)
+    public void start(String title)
     {
         TITLE = title;
-        clock = new Clock();
-        input = new Input();
+        Clock.Instance().start();
+        Input.Instance().start();
         objects = new ArrayList<>();
         init();
     }
     
     public final void init()
     {
-        Player ball = new Player(new Vector3(Display.getWidth() / 2, Display.getHeight() / 2, 0.0f), new Vector3(32, 32, 0), new Vector3(0, 0, 0));
+        Player ball = new Player(new Vector2(Display.getWidth() / 2, Display.getHeight() / 2), new Vector2(32, 32), new Vector2(0, 0));
         objects.add(ball);
     }
     
     public void getInput()
     {
-        input.update();
+        Input.Instance().update();
     }
     
     public void update()
     {
-        clock.update();
+        Clock.Instance().update();
         for(GameObject go : objects)
+        {
             go.update();
+            go.fixedUpdate();
+        }
     }
     
     public void render()
@@ -54,8 +56,8 @@ public class Game
     }
     
     // Getters
-    public String getTitle() { return TITLE; }
+    public String TITLE() { return TITLE; }
     
     // Setters
-    public void setTitle(String value) { TITLE = value; }
+    public void TITLE(String value) { TITLE = value; }
 }

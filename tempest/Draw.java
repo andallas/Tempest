@@ -4,12 +4,12 @@ import static org.lwjgl.opengl.GL11.*;
 
 public class Draw
 {
-    public static void Rect(Vector3 pos, Vector3 scale)
+    public static void Rect(Vector2 pos, Vector2 scale)
     {
         glPushMatrix();
-        glTranslatef(pos.getX(), pos.getY(), pos.getZ());
-        float halfWidth = scale.getX() / 2;
-        float halfHeight = scale.getY() / 2;
+        glTranslatef(pos.X(), pos.Y(), 0.0f);
+        float halfWidth = scale.X() / 2;
+        float halfHeight = scale.Y() / 2;
         glBegin(GL_QUADS);
         {
             glVertex2f(-halfWidth, -halfHeight);
@@ -21,13 +21,13 @@ public class Draw
         glPopMatrix();
     }
     
-    public static void Rect(Vector3 pos, Vector3 scale, Vector3 color)
+    public static void Rect(Vector2 pos, Vector2 scale, Vector3 color)
     {
         glPushMatrix();
-        glColor4f(color.getX(), color.getY(), color.getZ(), 1.0f);
-        glTranslatef(pos.getX(), pos.getY(), pos.getZ());
-        float halfWidth = scale.getX() / 2;
-        float halfHeight = scale.getY() / 2;
+        glColor4f(color.X(), color.Y(), color.Z(), 1.0f);
+        glTranslatef(pos.X(), pos.Y(), 0.0f);
+        float halfWidth = scale.X() / 2;
+        float halfHeight = scale.Y() / 2;
         glBegin(GL_QUADS);
         {
             glVertex2f(-halfWidth, -halfHeight);
@@ -39,14 +39,14 @@ public class Draw
         glPopMatrix();
     }
     
-    public static void Rect(Vector3 pos, Vector3 scale, Vector3 rot, Vector3 color)
+    public static void Rect(Vector2 pos, Vector2 scale, Vector2 rot, Vector3 color)
     {
         glPushMatrix();
-        glColor4f(color.getX(), color.getY(), color.getZ(), 1.0f);
-        glTranslatef(pos.getX(), pos.getY(), pos.getZ());
-        glRotatef(rot.getX(), rot.getY(), rot.getZ(), 1.0f);
-        float halfWidth = scale.getX() / 2;
-        float halfHeight = scale.getY() / 2;
+        glColor4f(color.X(), color.Y(), color.Z(), 1.0f);
+        glTranslatef(pos.X(), pos.Y(), 0.0f);
+        glRotatef(rot.X(), rot.Y(), 0.0f, 1.0f);
+        float halfWidth = scale.X() / 2;
+        float halfHeight = scale.Y() / 2;
         glBegin(GL_QUADS);
         {
             glVertex2f(-halfWidth, -halfHeight);

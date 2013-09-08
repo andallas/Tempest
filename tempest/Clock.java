@@ -2,6 +2,8 @@ package tempest;
 
 public class Clock
 {
+    private static Clock clock = new Clock();
+    
     private long PREVIOUS_TIME;
     private long ELAPSED_TIME = 0;
     private long TICK_TIME = 0;
@@ -9,7 +11,15 @@ public class Clock
     private static int TICK = 1;
     private static int FPS = 0;
     
-    public Clock()
+    private Clock()
+    {}
+    
+    public static Clock Instance()
+    {
+        return clock;
+    }
+    
+    public void start()
     {
         PREVIOUS_TIME = getTime();
     }
@@ -43,7 +53,7 @@ public class Clock
     private long getTime() { return System.nanoTime() / 1000000; }
     
     // Getters
-    public static float DeltaTime() { return DELTA_TIME; }
-    public static int Tick() { return TICK; }
+    public static float DELTA_TIME() { return DELTA_TIME; }
+    public static int TICK() { return TICK; }
     public static int FPS() { return FPS; }
 }
