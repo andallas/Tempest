@@ -1,46 +1,52 @@
 package tempest;
 
 import java.util.ArrayList;
+
 import org.lwjgl.opengl.Display;
 
 public class Game
 {
-    private String TITLE;
-    private ArrayList<GameObject> objects;
-    public Clock clock;
+    private static Game game = new Game();
     
-    public Game()
+    private String TITLE;
+    public  ArrayList<GameObject> objects;
+    
+    private Game()
+    {}
+    
+    public static Game Instance()
     {
-        TITLE = "Game";
-        clock = new Clock();
-        objects = new ArrayList<>();
-        init();
+        return game;
     }
     
-    public Game(String title)
+    public void start(String title)
     {
         TITLE = title;
-        clock = new Clock();
+        Clock.Instance().start();
+        Input.Instance().start();
         objects = new ArrayList<>();
         init();
     }
     
     public final void init()
     {
-        Ball ball = new Ball(new Vector3(Display.getWidth() / 2, Display.getHeight() / 2, 0.0f));
+        Player ball = new Player(new Vector2(Display.getWidth() / 2, Display.getHeight() / 2), new Vector2(32, 32), new Vector2(0, 0));
         objects.add(ball);
     }
     
     public void getInput()
     {
-        
+        Input.Instance().update();
     }
     
     public void update()
     {
-        clock.update();
+        Clock.Instance().update();
         for(GameObject go : objects)
+        {
             go.update();
+            go.fixedUpdate();
+        }
     }
     
     public void render()
@@ -50,14 +56,8 @@ public class Game
     }
     
     // Getters
-    public String getTitle()
-    {
-        return TITLE;
-    }
+    public String TITLE() { return TITLE; }
     
     // Setters
-    public void setTitle(String value)
-    {
-        TITLE = value;
-    }
+    public void TITLE(String value) { TITLE = value; }
 }

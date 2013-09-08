@@ -17,7 +17,6 @@ public class Main
     };
     
     public static String TITLE = "Tempest v0.0.1";
-    private static Game game;
     
     public static void main(String[] args)
     {
@@ -33,10 +32,7 @@ public class Main
         cleanUp();
     }
     
-    private static void initGame()
-    {
-        game = new Game(TITLE);
-    }
+    private static void initGame() { Game.Instance().start(TITLE); }
     
     private static void gameLoop()
     {
@@ -48,21 +44,15 @@ public class Main
         }
     }
     
-    private static void getInput()
-    {
-        game.getInput();
-    }
+    private static void getInput() { Game.Instance().getInput(); }
     
-    private static void update()
-    {
-        game.update();
-    }
+    private static void update() { Game.Instance().update(); }
     
     private static void render()
     {
         glClear(GL_COLOR_BUFFER_BIT);
         
-        game.render();
+        Game.Instance().render();
 
         Display.update();
         Display.sync(60);
@@ -82,7 +72,7 @@ public class Main
                 glMatrixMode(GL_MODELVIEW);
                 
                 // Set the background color
-                glClearColor(0, 214, 255, 1);
+                glClearColor(0, 0.529f, 0.8f, 1);
                 
                 glDisable(GL_DEPTH_TEST);
             break;
