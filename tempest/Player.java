@@ -1,8 +1,14 @@
 package tempest;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.newdawn.slick.opengl.Texture;
+
 public class Player extends Entity
 {   
     private Vector2 Velocity;
+    private Texture texture;
     
     public Player(Vector2 position, Vector2 scale, Vector2 rot)
     {
@@ -11,6 +17,14 @@ public class Player extends Entity
         this.Rotation = rot;
         this.Physics = new PhysicsComponent(this.Position, new Vector2(), 1.75f);
         this.Velocity = new Vector2();
+        try
+        {
+            this.texture = AssetManager.Instance().Texture("Player_00.png");
+        }
+        catch(IOException ex)
+        {
+            Logger.getLogger(Player.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     @Override public void update()
@@ -37,7 +51,8 @@ public class Player extends Entity
     
     @Override public void render()
     {
-        Draw.Rect(this.Position, this.Scale, this.Rotation, new Vector3(0.8f, 0.15f, 0.0f));
+        //Draw.Rect(this.Position, this.Scale, this.Rotation, new Vector3(0.8f, 0.15f, 0.0f));
+        Draw.Rect(this.Position, this.Scale, texture);
     }
     
     @Override
