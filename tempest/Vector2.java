@@ -40,6 +40,10 @@ public class Vector2
     public void Y(float value)   { Y = value; }
     public void Y(int value)     { Y = (float)value; }
     public void Y(double value)  { Y = (float)value; }
+    public void set(float x, float y) { X = x; Y = y; }
+    public void set(int x, int y) { X = (float)x; Y = (float)y; }
+    public void set(double x, double y) { X = (float)x; Y = (float)y; }
+    public void set(Vector2 value) { X = value.X(); Y = value.Y(); }
     
     // Static
     public static Vector2 Add(Vector2 left, Vector2 right)

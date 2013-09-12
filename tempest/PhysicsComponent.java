@@ -14,16 +14,15 @@ public class PhysicsComponent
     }
     
     public void update()
-    {
+    {        
         this.Velocity.mult(0.975f);
         if((this.Velocity.X() < 0.1f && this.Velocity.X() > 0f) || (this.Velocity.X() > -0.1f && this.Velocity.X() < 0f))
             this.Velocity.X(0f);
         if((this.Velocity.Y() < 0.1f && this.Velocity.Y() > 0f) || (this.Velocity.Y() > -0.1f && this.Velocity.Y() < 0f))
             this.Velocity.Y(0f);
-        //this.Velocity.Y(this.Velocity.Y() + (GRAVITY * Clock.DELTA_TIME()));
     }
         
-    public Vector2 addForce(Vector2 force)
+    public Vector2 addImpulse(Vector2 force)
     {
         force.mult(this.Mass);
         force.mult(Clock.DELTA_TIME());

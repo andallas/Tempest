@@ -17,22 +17,21 @@ public class Player extends Entity
     {
         if(Input.getKeyDown("W"))
         {
-            this.Velocity = Physics.addForce(new Vector2(0f, 10f));
+            this.Velocity.set(Physics.addImpulse(new Vector2(0f, 10f)));
         }
         else if(Input.getKeyDown("S"))
         {
-            this.Velocity = Physics.addForce(new Vector2(0f, -10f));
+            this.Velocity.set(Physics.addImpulse(new Vector2(0f, -10f)));
         }
         if(Input.getKeyDown("A"))
         {
-            this.Velocity = Physics.addForce(new Vector2(-10f, 0f));
+            this.Velocity.set(Physics.addImpulse(new Vector2(-10f, 0f)));
         }
         else if(Input.getKeyDown("D"))
         {
-            this.Velocity = Physics.addForce(new Vector2(10f, 0f));
+            this.Velocity.set(Physics.addImpulse(new Vector2(10f, 0f)));
         }
         
-        Physics.update();
         super.update();
     }
     
@@ -45,5 +44,10 @@ public class Player extends Entity
     void move()
     {
         this.Position.add(this.Velocity);
+        this.Velocity.mult(0.975f);
+        if((this.Velocity.X() < 0.1f && this.Velocity.X() > 0f) || (this.Velocity.X() > -0.1f && this.Velocity.X() < 0f))
+            this.Velocity.X(0f);
+        if((this.Velocity.Y() < 0.1f && this.Velocity.Y() > 0f) || (this.Velocity.Y() > -0.1f && this.Velocity.Y() < 0f))
+            this.Velocity.Y(0f);
     }
 }
